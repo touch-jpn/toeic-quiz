@@ -70,13 +70,17 @@ async function generateArticle(theme) {
   )
 
   const data = await res.json()
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? ''
-  console.log('Gemini response:', text.slice(0, 300))
+  console.log('API status:', res.status)
+  console.log('Full response:', JSON.stringify(data).slice(0, 500))
 
-  // マークダウンのコードブロックを除去してからJSONを抽出
+  if (data.error) throw new Error(`API error: ${data.error.message}`)
+
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? ''
+  if (!text) throw new Error(`Empty text. finishReason: ${data.candidates?.[0]?.finishReason}`)
+
   const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()
   const jsonMatch = cleaned.match(/\{[\s\S]*\}/)
-  if (!jsonMatch) throw new Error('JSON not found in response')
+  if (!jsonMatch) throw new Error(`JSON not found. Response: ${text.slice(0, 200)}`)
   return JSON.parse(jsonMatch[0])
 }
 
