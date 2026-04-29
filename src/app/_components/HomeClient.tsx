@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Level, QuizMode } from '@/types'
 import RizapAd from './RizapAd'
+import Link from 'next/link'
 
 export default function HomeClient() {
   const router = useRouter()
@@ -96,6 +97,11 @@ export default function HomeClient() {
             クイズスタート 🚀
           </button>
         </div>
+      </div>
+      <div className="mt-4">
+        <Link href="/blog" className="text-indigo-400 hover:text-indigo-600 text-sm underline">
+          📝 英語学習コラムを読む
+        </Link>
       </div>
       <RizapAd />
     </main>
