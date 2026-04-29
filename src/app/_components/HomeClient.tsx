@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Level, QuizMode } from '@/types'
+import RizapAd from './RizapAd'
 
 export default function HomeClient() {
   const router = useRouter()
@@ -96,6 +97,7 @@ export default function HomeClient() {
           </button>
         </div>
       </div>
+      <RizapAd />
     </main>
   )
 }

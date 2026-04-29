@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import RizapAd from '../_components/RizapAd'
 
 function ResultContent() {
   const router = useRouter()
@@ -77,6 +78,7 @@ function ResultContent() {
             </button>
           </div>
         </div>
+        <RizapAd />
       </div>
     </main>
   )
