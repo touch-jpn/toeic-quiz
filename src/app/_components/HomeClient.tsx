@@ -17,7 +17,7 @@ export default function HomeClient() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center p-4">
+    <main className="flex flex-col min-h-screen items-center justify-center p-4 overflow-x-hidden">
       <div className="w-full max-w-md">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold text-indigo-700 mb-2">TOEIC 英単語クイズ</h1>

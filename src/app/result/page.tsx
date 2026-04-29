@@ -30,7 +30,7 @@ function ResultContent() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center p-4">
+    <main className="flex flex-col min-h-screen items-center justify-center p-4 overflow-x-hidden">
       <div className="w-full max-w-md text-center">
         <div className="bg-white rounded-2xl shadow-lg p-10 space-y-6">
           <h1 className="text-3xl font-bold text-gray-800">クイズ終了！</h1>
