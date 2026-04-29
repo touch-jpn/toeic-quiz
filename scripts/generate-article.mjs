@@ -1,4 +1,4 @@
-import { writeFileSync, readdirSync } from 'fs'
+import { writeFileSync, readdirSync, mkdirSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -30,7 +30,8 @@ const themes = [
 ]
 
 function pickTheme() {
-  const existing = readdirSync(BLOG_DIR).map(f => f.replace('.json', ''))
+  mkdirSync(BLOG_DIR, { recursive: true })
+  const existing = readdirSync(BLOG_DIR).filter(f => f.endsWith('.json')).map(f => f.replace('.json', ''))
   const unused = themes.filter((_, i) => !existing.includes(String(i).padStart(3, '0')))
   if (unused.length === 0) return { theme: themes[Math.floor(Math.random() * themes.length)], index: existing.length }
   const index = themes.indexOf(unused[0])
