@@ -6,7 +6,7 @@ const jsonLd = {
   name: 'TOEIC英単語クイズ',
   description:
     'TOEICに頻出するビジネス英単語1500語を5択クイズで学習。英和・和英の2モード、レベル別対応。例文付き。',
-  url: 'https://toeic-quiz-touch-jpn.vercel.app',
+  url: 'https://toeic-quiz-nine.vercel.app',
   applicationCategory: 'EducationalApplication',
   inLanguage: ['ja', 'en'],
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },

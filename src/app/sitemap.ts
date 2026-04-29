@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const siteUrl = 'https://toeic-quiz-touch-jpn.vercel.app'
+const siteUrl = 'https://toeic-quiz-nine.vercel.app'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
