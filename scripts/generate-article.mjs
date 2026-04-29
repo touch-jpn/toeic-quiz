@@ -71,7 +71,11 @@ async function generateArticle(theme) {
 
   const data = await res.json()
   const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? ''
-  const jsonMatch = text.match(/\{[\s\S]*\}/)
+  console.log('Gemini response:', text.slice(0, 300))
+
+  // マークダウンのコードブロックを除去してからJSONを抽出
+  const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()
+  const jsonMatch = cleaned.match(/\{[\s\S]*\}/)
   if (!jsonMatch) throw new Error('JSON not found in response')
   return JSON.parse(jsonMatch[0])
 }
