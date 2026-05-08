@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Level, QuizMode } from '@/types'
-import RizapAd from './RizapAd'
 import Link from 'next/link'
 
 export default function HomeClient() {
@@ -103,7 +102,6 @@ export default function HomeClient() {
           📝 英語学習コラムを読む
         </Link>
       </div>
-      <RizapAd />
     </main>
   )
 }

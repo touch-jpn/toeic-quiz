@@ -3,7 +3,6 @@ import { join } from 'path'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import RizapAd from '@/app/_components/RizapAd'
 
 const BLOG_DIR = join(process.cwd(), 'src', 'content', 'blog')
 
@@ -63,8 +62,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>
-
-      <RizapAd />
 
       <div className="mt-8 text-center">
         <Link
